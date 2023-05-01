@@ -1,0 +1,213 @@
+// return  FirstName ,  LastName , Email fields 
+// of all Contact Records in your organization 
+//SELECT FirstName, LastName , Email 
+//FROM Contact
+
+
+// return  LastName ,  Company  fields 
+// of all Lead Records in your organization 
+//SELECT LastName, Company
+//FROM Lead
+
+
+// return  Subject ,  Description, Status  fields 
+// of all Case Records in your organization 
+// SELECT Subject, Description, Status
+// FROM Case
+
+
+// return  Subject ,  ActivityDate, WhatId  fields 
+// of all Task Records in your organization 
+// SELECT Subject, ActivityDate, WhatId 
+// FROM Task
+
+
+// return  LastName , AccountId fields 
+// of all Contact Records in your organization 
+// SELECT LastName, Account.Name, Account.AnnualRevenue
+// FROM Contact
+
+
+// Restricting the rows with conditions 
+// using WHERE Clause 
+// get all contacts first name and last name
+// if the first name is Sean 
+// SELECT FirstName, LastName
+// FROM Contact
+// WHERE FirstName = 'Sean'
+
+
+// get all the accounts name, AnnualRevenue
+// if AnnualRevenue is between 50000 and 1000000
+// We can use AND to combine conditions 
+    // that need to be true at the same time
+// SELECT Name, AnnualRevenue
+//  FROM Account
+//  WHERE AnnualRevenue>=50000 
+//    AND AnnualRevenue<=1000000
+
+
+// Use OR to return records that meet one of two conditions. 
+// get all the accounts name, AnnualRevenue
+// if AnnualRevenue is less than 5000 
+// or greater than 1000000
+// SELECT  Name, AnnualRevenue
+// FROM Account
+// WHERE AnnualRevenue<=5000
+// OR AnnualRevenue>=1000000
+
+
+
+// Get  All Account Name field 
+// if the name is not 
+// Dickenson plc
+// Edge Communications
+// AnnualRevenue is not null
+// SELECT Name, AnnualRevenue
+//  FROM Account
+//  WHERE AnnualRevenue != null 
+//    AND (Name != 'Dickenson plc' AND Name != 'Edge Communications')
+
+
+
+// Get  All Account Name, AnnualRevenue field 
+// if the name is not 
+// Dickenson plc
+// Edge Communications
+// United Oil & Gas Corp.
+// SOQL STRINGS ARE CASE INSENSITIVE
+// SELECT Name, AnnualRevenue  
+// FROM Account
+// WHERE Name = 'Dickenson plc'
+// OR Name = 'Edge Communications'
+// OR Name = 'United Oil & Gas Corp.'
+
+
+// Above query can be better using IN operator (IN only for OR condition, not for AND)
+// Just like switch statement in Apex,
+// if we are checking multiple possible value for same variable|field
+// IN (val1, val2, val3....)
+// Any result that match any of those options will be return
+// Anything does not match will not return
+// in below example first 3 names exists in records, last one does not ==> 
+// SELECT Name, AnnualRevenue
+//    FROM Account
+//    WHERE Name IN ('Dickenson plc',
+//                'Edge Communications',
+//                'United Oil & Gas Corp.',
+//                'BLA BLA'
+//                )
+
+
+
+// Get all opportunity Name, Amount, StageName
+// if the StageName is IN Closed Won or Closed Lost status
+// SELECT Name, Amount, StageName 
+// FROM opportunity
+// WHERE StageName IN ('Closed Won','Closed Lost')
+
+
+// Now what if we want to only return if StageName is not Closed Won , Closed Lost
+// SELECT Name, Amount, StageName 
+// FROM opportunity
+// WHERE StageName NOT IN ('Closed Won','Closed Lost')
+
+
+
+// Get All Account Name field
+// if the Name is not  
+// Dickenson plc 
+// Edge Communications
+// AnnualRevenue is not null 
+// SELECT Name, AnnualRevenue
+//    FROM Account
+//    WHERE Name NOT IN ('Dickenson plc', 'Edge Communications')
+//    AND AnnualRevenue != null
+
+
+
+// Get all Contact first name and last names
+// sort the result by firstName alphabetical order A-Z (ascending order)
+          
+
+
+
+// Get all Opportunity Name, Amount, StageName  
+// Order by Amount Desc . Limit the result to 3 records
+SELECT Name, Amount, StageName
+FROM Opportunity
+ORDER BY Amount DESC LIMIT 3
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SELECT FirstName, LastName
+  FROM Contact
+  ORDER BY FirstName ASC

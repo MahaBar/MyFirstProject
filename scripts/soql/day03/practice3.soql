@@ -1,0 +1,115 @@
+// PARENT TO CHILD RELATIONSHIP QUERY
+
+
+// Get All the Account Name
+// and Name and Email of Contacts associated with those account
+// from Account Object
+// SELECT Name, (SELECT Name,Email FROM Contacts) // SHILD
+// FROM Account // PARENT
+// ORDER BY CreatedDate ASC
+
+
+// Get All the Account Name
+// and Subject of Cases associated with those account
+// from Account Object
+// SELECT Name, (SELECT Subject FROM Cases)
+// FROM Account // PARENT
+// ORDER BY CreatedDate ASC
+
+
+// Get All the Contact Name
+// and Case Subject, Status of Cases associated with those account
+// from Contact Object
+// SELECT Name, (SELECT Subject, Status FROM Cases)
+// FROM Contact
+
+
+// CUSTOM OBJECT (we always use '__r')
+// Get All the Contact Name
+// and Book Name, Price of Books associated with those account
+// from Contact Object
+// SELECT  Name, (SELECT Name, Price__c FROM Books__r)
+// FROM Contact
+
+
+// Get the Name of the Account if it has child contact with Last Name Forbes
+// STEP 1
+// SELECT AccountId FROM Contact WHERE LastName = 'Forbes'
+// STEP 2
+// SELECT Name
+// FROM Account
+// WHERE Id = '001Dn00000FCIbGIAX'
+// FINAL STEP 
+// SELECT Name
+// FROM Account
+// WHERE Id IN (SELECT AccountId FROM Contact WHERE LastName = 'Forbes')
+
+
+// Get All the Account Names if the child Contacts Last Name starts with F
+// Also display all the contact along with Account Name
+// IN LINE 'SELECT' WE PUT RELATIONSHIP NAME
+// IN LINE 'WHERE' WE PUT FUNCTION|CONDITION|FILTER
+// SELECT Name , (SELECT FirstName,LastName FROM Contacts  WHERE LastName LIKE 'F%')
+// FROM Account 
+// WHERE Id IN (SELECT AccountId FROM Contact WHERE LastName LIKE 'F%')
+
+// Get All The Account with Opportunity
+// STEP 1
+// SELECT Name, AccountId, Account.Name
+// FROM Opportunity
+SELECT Name
+ FROM Account
+ WHERE Id IN (SELECT AccountId FROM Opportunity)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
