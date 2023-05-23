@@ -1,4 +1,4 @@
-Schedulable s = new ScheduledTaskCleanUp(); 
+Schedulable s = new ScheduledTaskCleanUp(); // polymorphism
 
 // crone expression is used to 
 // define time inetervals programatically 

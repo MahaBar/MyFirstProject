@@ -1,5 +1,5 @@
 @isTest
-public with sharing class ZContactTriggerTitleInsertTest {
+public with sharing class testZContactTriggerTitleInsert {
 
     @isTest
     public static void testTitle(){
