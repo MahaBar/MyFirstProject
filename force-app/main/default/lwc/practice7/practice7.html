@@ -1,0 +1,25 @@
+<template>
+    <lightning-card title="Toggle Practice" icon-name="standard:toggle">
+      <div class="slds-var-m-around_medium">
+
+        <lightning-input 
+            type="toggle" 
+            label={theLabel}
+            checked={on}
+            onchange={handleToggleChange}
+        ></lightning-input>   
+
+        <!-- Conditional displaying element 
+        using lwc:if directive inside <template> tag -->
+        <template lwc:if={on}>
+            <p> This should show when the switch is on </p>
+        </template>
+
+        <template lwc:else>
+            <p> This should show when the switch is off </p>
+        </template>
+ 
+      </div>
+    </lightning-card>
+  </template>
+ 
