@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Data Binding 2" icon-name="utility:customer">
+      <div class="slds-var-m-around_medium">
+        <!-- add an p tag to show a property called message -->
+        <p>Message : {message}</p>
+        <!-- add a input tag with label message -->
+  
+        <lightning-input
+          type="text"
+          label="My Message"
+          onchange={handleChange}
+          value={inputValue}
+        ></lightning-input>
+  
+        <lightning-button
+          variant="brand"
+          label="Reset"
+          onclick={handleReset}
+        ></lightning-button>
+  
+        <lightning-button
+          variant="destructive"
+          label="Clear"
+          onclick={handleClear}
+        ></lightning-button>
+      
+      
+      </div>
+  
+    </lightning-card>
+  </template>
+  

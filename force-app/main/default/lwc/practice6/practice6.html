@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Practice 6" icon-name="standard:toggle">
+      <div class="slds-var-m-around_medium">
+        <!-- hired checkbox -->
+        <lightning-input type="checkbox" 
+          label="Hired"
+          checked={hired}
+          onchange={handleHiredChange}
+          ></lightning-input>
+  
+        <!-- Graduated Graduated -->
+        <lightning-input
+          type="checkbox"
+          label="Graduated"
+          checked = {graduated}
+          onchange={handleGraduatedChange}
+        ></lightning-input>
+  
+        <!-- Promoted Promoted -->
+        <lightning-input
+          type="checkbox"
+          label="Promoted"
+          checked = {promoted}
+          disabled
+        ></lightning-input>
+  
+        <p>Hired checkbox checked : {hired}  </p>
+        <p>Graduated checkbox checked : {graduated}  </p>
+        <p>Promoted checkbox checked : {promoted}  </p>
+  
+  
+      </div>
+    </lightning-card>
+  </template>

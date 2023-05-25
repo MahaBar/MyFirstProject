@@ -1,0 +1,45 @@
+<template>
+    <lightning-card
+      title="Data Binding -Calculator"
+      icon-name="utility:budget_period"
+    >
+      <div class="slds-var-m-around_medium">
+        <lightning-input
+          type="number"
+          variant="label-inline"
+          label="First Number"
+          onchange={handleNum1Change}
+          step="any"
+        ></lightning-input>
+  
+        <lightning-input
+          type="number"
+          variant="label-inline"
+          label="Second Number"
+          onchange={handleNum2Change}
+          step="any"
+        ></lightning-input>
+  
+        <div class="slds-var-m-top_small slds-align_absolute-center">
+          Addition Result is : {additionResult}
+          <br />
+          Subtraction Result is : {subtractionResult}
+          <br />
+          Multiplication Result is : {multiplicationResult}
+          <br />
+          Division Result is : {divisionResult}
+          <br />
+          <!-- Reset button to set num1 and num2 values to 0 -->
+        </div>
+  
+        <div class="slds-var-m-top_small slds-align_absolute-center">
+          <lightning-button
+            variant="destructive"
+            label="Reset"
+            onclick={handleReset}
+          ></lightning-button>
+        </div>
+        
+      </div>
+    </lightning-card>
+  </template>
