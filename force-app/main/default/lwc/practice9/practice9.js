@@ -9,6 +9,7 @@ export default class Practice9 extends LightningElement {
     // for the picklist 
     get options() {
         return [
+            { label: '--NONE--', value: '' },
             { label: 'Virginia', value: 'VA' },
             { label: 'Maryland', value: 'MD' },
             { label: 'California', value: 'CA' },
