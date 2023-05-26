@@ -1,0 +1,33 @@
+<template>
+    <lightning-card title="Practice 12 - Datatable" icon-name="utility:loop">
+      <div class="slds-var-m-around_medium">
+        <!-- search box -->
+        <lightning-input
+          type="search"
+          label="Search Food"
+          placeholder="type here..."
+          value={searchKey}
+          onchange={handleSearchKeyChange}
+        ></lightning-input>
+      
+        <!-- conditionally display a paragraph element
+        to show what user typed-->
+      <template lwc:if={searchKey}>
+        <p>You are searching for {searchKey}</p>
+      </template>
+  
+      <!-- Display Datatable with 2 columns Food Name , Calorie -->
+      <br>
+
+      <lightning-datatable
+        key-field="id"
+        data={filteredFoods}
+        columns={columns}>
+     </lightning-datatable>
+      
+  
+  
+      </div>
+    </lightning-card>
+  </template>
+ 

@@ -1,0 +1,37 @@
+<template>
+  <lightning-card title="Practice 11 - ForEach" icon-name="utility:loop">
+    <div class="slds-var-m-around_medium">
+      <!-- search box -->
+      <lightning-input
+        type="search"
+        label="Search Food"
+        placeholder="type here..."
+        value={searchKey}
+        onchange={handleSearchKeyChange}
+      ></lightning-input>
+    
+      <!-- conditionally display a paragraph element
+      to show what user typed-->
+    <template lwc:if={searchKey}>
+      <p>You are searching for {searchKey}</p>
+    </template>
+
+    <!-- Display foodArray in div tag with slds-box class -->
+    <br>
+
+    <template for:each={filteredFoods} for:item="each">
+
+        <!-- very first element after foreach directive must have 
+        a attribute called key and point to unique identifier to each element in the array
+        since each element here is object, we can access the field value using 
+         each.theFieldName -->
+        <div key={each.id} class="slds-box slds-box_x-small" >
+            The Food : {each.foodName} | Calorie is  {each.calories}  
+        </div>
+
+    </template>
+
+
+    </div>
+  </lightning-card>
+</template>
