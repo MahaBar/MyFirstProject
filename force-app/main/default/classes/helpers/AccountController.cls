@@ -52,6 +52,23 @@ public with sharing class AccountController {
 
    }
 
+     /**
+     * Create a static method called getAccountsIfRevenueLessThan
+     * @param maxRevenue the upper limit of AnnualRevenue
+     * @return List<Account> that has annual revenue less than maxRevenue
+     * make it available for your lwc 
+     */
+    @AuraEnabled(cacheable=true)
+    public static List<Account> getAccountsIfRevenueLessThan(Decimal maxRevenue){
+
+         return [SELECT Id,Name, AnnualRevenue 
+                  FROM Account 
+                  WHERE AnnualRevenue <  :maxRevenue
+                  WITH SECURITY_ENFORCED // WILL ENFORCE FIELD LEVEL SECURITY
+                ] ;
+
+    }
+
    /**
     * Create a static method called getMaxRevenue
     * @return max AnnualRevenue for all Accounts in your salesforce org 

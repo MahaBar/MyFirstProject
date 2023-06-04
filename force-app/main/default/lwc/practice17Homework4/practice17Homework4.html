@@ -1,0 +1,29 @@
+<template>
+
+    <lightning-card title="Filter Wired Datatable with slider" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <!-- slider with to go from  0-1,000,000,000 in 10000 per slide-->
+            <lightning-slider 
+                label="Max Revenue" 
+                max = "1000000000" 
+                value={sliderValue}
+                onchange={handleSliderChange}
+                step="10000"
+            ></lightning-slider>
+            <!-- only display if there is a result -->
+            <template lwc:if={filteredAccount} >
+                <!-- sldsValidatorIgnoreNextLine -->
+                <lightning-datatable
+                    key-field="Id"
+                    data={filteredAccount}
+                    columns={columns}
+                    show-row-number-column
+                    hide-checkbox-column
+                ></lightning-datatable>
+            </template>
+
+
+        </div>
+    </lightning-card>
+
+</template>
