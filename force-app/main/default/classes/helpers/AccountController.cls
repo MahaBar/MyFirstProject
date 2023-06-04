@@ -22,10 +22,10 @@ public with sharing class AccountController {
     * @param accName name of account you are searching
     * @return first matching account in your salesforce org
     */
-  
+    @AuraEnabled(cacheable=true)
     public static Account getAccountByName(String accName){
 
-       Account a = [SELECT Id,Name FROM Account
+       Account a = [SELECT Id,Name, AnnualRevenue FROM Account
                    WHERE Name =  :accName LIMIT 1]; 
        return a ; 
     }
@@ -68,6 +68,25 @@ public with sharing class AccountController {
                 ] ;
 
     }
+
+     /**
+     * Create a method to return Max Opportunity Amount in your org 
+     * with name getMaxOppAmount no param
+     * @return theAmount in Decimal 
+     * make it available for your LWC 
+     */
+    @AuraEnabled(cacheable=true)
+    public static Decimal getMaxOppAmount(){
+      
+        AggregateResult result =  [SELECT MAX(Amount) MaxAmount FROM Opportunity] ; 
+        
+        Decimal max = (Decimal) result.get('MaxAmount') ; 
+    
+       return max; 
+
+    }
+
+
 
    /**
     * Create a static method called getMaxRevenue

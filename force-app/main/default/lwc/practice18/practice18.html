@@ -4,11 +4,25 @@
     <lightning-card title="Wired Apex Method with param Datatable" icon-name="standard:account">
         <div class="slds-var-m-around_medium">  
 
-            <lightning-datatable
-                key-field="id"
-                data={myAccounts.data}
-                columns={columns}
-            ></lightning-datatable>
+            <lightning-slider 
+                label="Max Revenue" 
+                value={sliderValue}
+                onchange={handleSliderChange}
+                max="1000000000"
+                step="10000"
+            ></lightning-slider>
+            
+            <!-- conditionally display this datatable 
+            according to the {myAccounts.data} actually has value-->
+            <template lwc:if={myAccounts.data}>
+                <lightning-datatable
+                    key-field="id"
+                    data={myAccounts.data}
+                    columns={columns}
+                ></lightning-datatable>
+            </template>
+
+            <pre> {myAccountsInStr} </pre>
 
         </div>
     </lightning-card>

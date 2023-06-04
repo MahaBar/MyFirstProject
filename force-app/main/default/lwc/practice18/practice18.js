@@ -5,7 +5,7 @@ import getAccountsIfRevenueLessThan from "@salesforce/apex/AccountController.get
 
 export default class Practice18 extends LightningElement {
 
-    // sliderValue = 100000; 
+    sliderValue = 5000000; 
 
     columns = [
         { label: 'Account Name', fieldName: 'Name' },
@@ -13,13 +13,22 @@ export default class Practice18 extends LightningElement {
       ];
 
     // {
-    //     data : "wired data goes here", 
+    //     data : "wired data goes here",
     //     error : " error goes here if any",
     //  }
-    @wire(getAccountsIfRevenueLessThan, {maxRevenue: 10000000 }    )
+    // in order to make the apex method parameter value dynamic
+    // using the property we need to use the '$propertyName' syntax
+    // @wire(getAccountsIfRevenueLessThan ,{maxRevenue:1000000 })
+    @wire(getAccountsIfRevenueLessThan ,{maxRevenue:'$sliderValue' })
     myAccounts; 
-
-
+    // get the raw json string to see what we got wired to
+    get myAccountsInStr() {
+        return JSON.stringify(this.myAccounts,null,2); 
+    }
     
+
+    handleSliderChange(event) {
+        this.sliderValue = event.target.value ; 
+    }
     
 }

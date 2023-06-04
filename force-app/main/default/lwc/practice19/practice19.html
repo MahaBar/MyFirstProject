@@ -1,0 +1,42 @@
+<template>
+    <lightning-card title="Wired Apex Method with param Practice" icon-name="standard:account">
+        
+        <div class="slds-var-m-around_medium"> 
+            
+            <!-- add 3 p tag to show firstName, lastName, age 
+            <p>firstName :  {person.firstName}  </p>
+            <p>lastName  :  {person.lastName}   </p>
+            <p>age       :  {person.age}  </p>
+             create p tag to display company state 
+            <p>Company state : {person.company.state}   </p> -->
+
+            <!-- add a search lightning input field
+            have 2 way data binding  -->
+
+            <lightning-input 
+                type="search" 
+                label="Account name to search" 
+                value={searchInput}
+                onchange={handleSearchChange}
+            ></lightning-input>
+
+            <!-- if theAccount has value 
+                Display account name and AnnualRevenue -->
+            <!-- show the person object in pretty format -->
+            <template lwc:if={theAccount.data}>
+                <p>{theAccount.data.Name} --- {theAccount.data.AnnualRevenue}</p>
+            </template>
+            <!-- Conditionally display error : NO Account Found !! -->
+            <template lwc:elseif={theAccount.error}>
+                <p>NO Account with this name Found!!</p>
+            </template>
+
+            <!-- show wired result in raw json String format -->
+            <pre>
+                {theAccountInStr}
+            </pre>
+
+        </div>
+
+    </lightning-card>
+</template>
