@@ -1,0 +1,62 @@
+<template>
+    
+    <lightning-card title="Lightning Layout" icon-name="custom:custom104">
+        <div class="slds-var-m-around_medium">
+
+            <!-- create lightning layout that has 2 items 
+            so we can have horizontal display of 2 elements  -->
+            <lightning-layout pull-to-boundary="medium">
+                <!-- this is the container for 1 column  -->
+                <lightning-layout-item padding="around-small">
+                    <!-- add input text element first name -->
+                    <lightning-input type="text" label="First Name"></lightning-input>
+
+                </lightning-layout-item>
+
+                 <!-- this is the container for 1 column  -->
+                <lightning-layout-item padding="around-small">
+                    <!-- add input text element last name -->
+                    <lightning-input type="text" label="Last Name"></lightning-input>
+                    
+                </lightning-layout-item>
+
+                <!-- this is the container for 1 column  -->
+                <lightning-layout-item padding="around-small">
+                    <!-- add input text element company name -->
+                    <lightning-input type="text" label="Company"></lightning-input>
+                    
+                </lightning-layout-item>
+
+                <!-- this is the container for 1 column  -->
+                <lightning-layout-item padding="around-small">
+                    <!-- add button element Click Me -->
+                    <lightning-button label="Click Me"></lightning-button>
+                    
+                </lightning-layout-item>
+
+
+            </lightning-layout>
+
+
+            <lightning-layout>
+
+                <lightning-layout-item  size="2"  padding="around-small">
+                    <!-- add input text element first name -->
+                    <lightning-input type="text" label="First Name"></lightning-input>
+
+                </lightning-layout-item>
+
+                <lightning-layout-item size="10" padding="around-small">
+                    <!-- add input text element with lable Message -->
+                    <lightning-input type="text" label="Message"></lightning-input>
+
+                </lightning-layout-item>
+
+            </lightning-layout>
+
+
+
+        </div>
+    </lightning-card>
+
+</template>

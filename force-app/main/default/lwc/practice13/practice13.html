@@ -1,0 +1,51 @@
+<template>
+    <lightning-card title="Slider" icon-name="standard:slider">
+      <div class="slds-var-m-around_medium">
+          <!-- slider with range of 0-100 with default value of 40  -->
+        <lightning-slider label="Volume" value="40"></lightning-slider>
+          <!-- slider with range of 100-200 with default value of 40  -->
+        <lightning-slider
+          label="Price"
+          min="100"
+          max="200"
+          value="40"
+        ></lightning-slider>
+        <!-- slider with range of 100000 - 200000 with default value of 140000
+         and jump by 1000 instead of 1 while sliding  -->
+         <lightning-slider 
+              label="Salary" 
+              value={salary}
+              onchange={handleSalaryChange}
+              min="100000"
+              max="200000"
+              step="1000"
+        ></lightning-slider>
+  
+        <!-- add a p element to show salary value -->
+        <p>Salary set to : {salary} </p>
+        
+        <!-- if the salary between 100k-135k
+           Show : NOT TO BAD  -->
+        <template lwc:if={notTooBad}>
+            <p>NOT TOO BAD!!!!</p>
+        </template>
+        <!-- if the salary between 135K-175K
+          Show : Average Salary  -->
+        <template lwc:elseif={averageSalary}>
+              <p>Average Salary!!!!</p>
+        </template>
+  
+        <!-- else
+          Show : Cool Cool Cool Salary  -->
+        <template lwc:else>
+              <p>Cool Cool Cool Salary!!!!</p>
+        </template>
+  
+          
+  
+  
+  
+      </div>
+    </lightning-card>
+  </template>
+  

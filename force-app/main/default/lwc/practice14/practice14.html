@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Spinner" icon-name="utility:spinner">
+      <div class="slds-var-m-around_medium">
+        <!-- create lightning spinner with text loading
+              conditionally display this 
+              if a property called showSpinner is true -->
+        <template lwc:if={showSpinner}>
+          <lightning-spinner
+            alternative-text="Loading"
+            size="large"
+          ></lightning-spinner>
+        </template>
+        <!-- Create a button click me
+              have on click event  -->
+        <lightning-button
+          label="Click me"
+          onclick={handleClick}
+        ></lightning-button>
+  
+        <!-- create a button to show success toast message when clicked  -->
+        <lightning-button
+          label="Show Success Toast"
+          onclick={handleShowSuccessToast}
+          variant="success"
+        ></lightning-button>
+  
+        <!-- Create a button to show error toast message when clicked  -->
+        <lightning-button
+          label="Show Error Toast"
+          onclick={handleShowErrorToast}
+          variant="destructive"
+        ></lightning-button>
+  
+  
+      </div>
+    </lightning-card>
+  </template>

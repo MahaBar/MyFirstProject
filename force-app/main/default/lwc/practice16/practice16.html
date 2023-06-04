@@ -1,0 +1,36 @@
+<template>
+    
+    <lightning-card title="Wired Data from Apex" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+
+            <!-- a temp button to console log wiredAccounts property
+            so we can understand the structure -->
+            <!-- <lightning-button label="Click me"
+             onclick={handleClick}
+             ></lightning-button> -->
+            
+             <!-- conditionally display whatever is below 
+             with condition of wiredAccounts.data is not empty or null or undefined
+                
+              use foreach directive to loop through wiredAccounts.data
+              create a p tag with key attribute provide unique id 
+              show text Account name is xxx Annual Revenue is yyy
+            -->
+            <template lwc:if={wiredAccounts.data} >
+                <!-- for each directive to loop an array 
+                our array happen to be in wiredAccounts.data just like foodArray -->
+                <template for:each={wiredAccounts.data} for:item="bla">
+
+                    <p key={bla.Id}> 
+                        Account name is  {bla.Name} |  Annual Revenue is {bla.AnnualRevenue}
+                    </p>
+
+                </template>
+
+            </template>
+
+
+        </div>
+    </lightning-card>
+
+</template>
