@@ -17,7 +17,7 @@ export default class Practice20 extends LightningElement {
         
         console.log(data); 
 
-        if (data) {                                  this.highestOppAmount = data; 
+        if (data) {   //always look like this                                this.highestOppAmount = data; 
             this.error = undefined; 
         } else if (error) {
             this.error = error; 

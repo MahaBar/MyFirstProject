@@ -17,7 +17,7 @@ export default class Practice21 extends LightningElement {
         // call apex method getMaxAmount
         // get the resulting number
         // assign it into highestOppAmount
-        getMaxOppAmount().then(result => {
+        getMaxOppAmount().then(result => {  //calling by yourself - imperitive method call, when click button 
             console.log(result); // returned data from apex  9999999
             this.highestOppAmount = result; 
         } )                 

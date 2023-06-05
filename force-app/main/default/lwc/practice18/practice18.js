@@ -19,7 +19,7 @@ export default class Practice18 extends LightningElement {
     // in order to make the apex method parameter value dynamic
     // using the property we need to use the '$propertyName' syntax
     // @wire(getAccountsIfRevenueLessThan ,{maxRevenue:1000000 })
-    @wire(getAccountsIfRevenueLessThan ,{maxRevenue:'$sliderValue' })
+    @wire(getAccountsIfRevenueLessThan ,{maxRevenue:'$sliderValue' })  //we need put $ in wire line than it will be a variable
     myAccounts; 
     // get the raw json string to see what we got wired to
     get myAccountsInStr() {
@@ -32,3 +32,5 @@ export default class Practice18 extends LightningElement {
     }
     
 }
+
+//wire - whole idea just automatically call stuff and inject to property or function
