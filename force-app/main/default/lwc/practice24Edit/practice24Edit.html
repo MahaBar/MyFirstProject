@@ -1,0 +1,21 @@
+<template>
+    
+    <lightning-card title="Opp Edit Form" icon-name="utility:form">
+        <div class="slds-var-m-around_medium">
+
+            <!-- Create lightning record form to create opportunity with required -->
+            <lightning-record-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                fields={fields}
+                mode="edit"
+                onsuccess={showSuccess}
+
+            >
+            </lightning-record-form>
+
+
+        </div>
+    </lightning-card>
+
+</template>

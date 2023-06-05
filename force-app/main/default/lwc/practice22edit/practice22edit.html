@@ -1,0 +1,29 @@
+<template>
+    
+    <lightning-card title="Lightning Record Edit Form" icon-name="utility:form">
+        <div class="slds-var-m-around_medium">
+
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                onsuccess={handleSuccess}
+
+            >
+                <!-- create lightning field elements here to specifiy which field you want to update -->
+                <lightning-input-field  field-name="Name"></lightning-input-field>
+                <lightning-input-field  field-name="AnnualRevenue"></lightning-input-field>
+                <lightning-input-field  field-name="Phone"></lightning-input-field>
+
+                <lightning-button
+                    type="submit"
+                    label="Update Account"
+                ></lightning-button>
+                
+            </lightning-record-edit-form>
+
+        </div>
+    </lightning-card>
+
+    <c-hello> </c-hello>
+
+</template>
