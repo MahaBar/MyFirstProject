@@ -1,0 +1,43 @@
+<template>
+    
+    <lightning-card title="Component Composition" icon-name="standard:action_list_component">
+        <div class="slds-var-m-around_medium">
+
+            <!-- display practice3 component here -->
+
+            <!-- <c-practice3> </c-practice3> -->
+
+            <!-- <c-practice4> </c-practice4> -->
+
+            <!-- create lightning input with 2 way data binding  -->
+            <lightning-input 
+                type="text" 
+                label="To The Child" 
+                value={inputMsg}    
+                onchange={handleChange}
+            ></lightning-input>
+
+
+            <!-- replace the hardcoded message value with what user typed above -->
+            <c-practice30-child 
+                message={inputMsg}
+                num = "50"
+            ></c-practice30-child>
+
+            <!-- all public properties of the child
+            can be assigned to value from parent as below
+            if you have camel case in your property name
+            it must be separated by - 
+            and all words must be lowercase -->
+            <c-practice30-child 
+                message="Message from Parent"
+                num="100"  
+                my-property="no uppercase"
+            ></c-practice30-child>
+
+            
+
+        </div>
+    </lightning-card>
+
+</template>

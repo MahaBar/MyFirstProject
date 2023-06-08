@@ -1,0 +1,27 @@
+<template>
+    
+    <lightning-card title="Food Stand" icon-name="custom:custom93">
+        <div class="slds-var-m-around_medium">
+
+            <p class="slds-text-heading_medium"> Selected Food is {selectedFood} </p>
+
+            <!-- show one food here -->
+            <!-- <c-food-item item={oneItem}> </c-food-item> -->
+
+            <!-- display all food items from food array
+            and use the child component for displaying
+            pass the data to the child -->
+            <template for:each={foodArray} for:item="each">
+                
+                <c-food-item 
+                    key={each.id} 
+                    item={each}
+                    onpick={handleChildPickEvent}
+                ></c-food-item>
+
+            </template>
+
+        </div>
+    </lightning-card>
+
+</template>
