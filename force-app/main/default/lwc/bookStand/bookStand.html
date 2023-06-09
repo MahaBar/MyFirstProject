@@ -1,36 +1,16 @@
 <template>
     
-    <lightning-card title="Book Stand" icon-name="custom:custom55">
-        <div class="slds-var-m-around_medium">
-
-            <lightning-layout>
-                <lightning-layout-item size="4" padding="around-small"  >
-                    FORM GOES HERE
-                </lightning-layout-item>
-                <lightning-layout-item size="8" padding="around-small">
-                    
-                    <template lwc:if={allBooks}>
-                        <template for:each={allBooks} for:item="each">
-
-                            <c-book-item 
-                                key={each.Id}
-                                book={each}>
-                            </c-book-item>
-
-                        </template>
-                    </template>
-                    
-
-
-
-                </lightning-layout-item>
-
-            </lightning-layout>
-
-
-
-
-        </div>
-    </lightning-card>
+    <div class="slds-box slds-var-m-bottom_medium slds-theme_inverse">
+        <lightning-icon icon-name="action:new_notebook" size="small" class="slds-var-m-right_small"></lightning-icon>
+        <p class="slds-text-heading_large">  
+           {book.Name}
+        </p>
+        <p>Unit Price: {book.Price__c} </p>
+        <!-- this button will fire custom event for parent or grand parent to listen -->
+        <lightning-button 
+            label="Select Book" 
+            onclick={handleClick}>
+        </lightning-button>
+    </div>
 
 </template>

@@ -5,6 +5,18 @@ export default class BookStand extends LightningElement {
     allBooks; 
     error; 
 
+    selectedBookId;
+
+    //method that handle the select event 
+    // fired from the child handleClick method
+    // get the data and do anything with it 
+    // in this case simply set selectedBookId property
+    handleBookSelected(event) {
+        console.log('parent responding to child select event and data ' + event.detail); 
+        this.selectedBookId = event.detail; 
+    }
+
+
     @wire(getAllBooks)
     wiredBooks( {data, error}  ) {
         

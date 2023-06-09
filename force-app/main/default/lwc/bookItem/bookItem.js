@@ -14,6 +14,7 @@ export default class BookItem extends LightningElement {
         // dispatch event and send teh book Id as data 
         const myEvent = new CustomEvent('select', {detail: this.book.Id }  );
         this.dispatchEvent(myEvent); 
+        console.log(this.book.Id); 
     }
 
 }

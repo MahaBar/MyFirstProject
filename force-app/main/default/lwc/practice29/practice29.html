@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Lifecycle Hook example" icon-name="standard:customer_360">
+      <div class="slds-var-m-around_medium">
+        <!-- conditionally display spinner according showSpinner property -->
+        <template lwc:if={showSpinner}>
+          <lightning-spinner
+            alternative-text="Loading"
+            size="large"
+          ></lightning-spinner>
+        </template>
+        <!-- when done spinning show below message -->
+        <template lwc:else>
+          <p class="slds-text-heading_large">Lifecycle hook</p>
+        </template>
+      </div>
+    </lightning-card>
+  </template>
+  

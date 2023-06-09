@@ -23,7 +23,12 @@ export default class FoodStand extends LightningElement {
         { id: 10, foodName: 'Lobster', calories: 129 }
     ];
 
-
+    /*
+    a method that respond to the pick event dispatched from the child 
+    and get the data sent over from the child 
+    set the value of selectedFood property to the data sent from the child 
+    so it can display in the p tag in the html 
+    */
     handleChildPickEvent(event) {
         console.log('Parent has received the event ready to respond')
         // printing out the event that received from the child 
