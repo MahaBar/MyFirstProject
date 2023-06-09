@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Message Sender" icon-name="utility:email">
+      <div class="slds-var-p-around_medium">
+        <lightning-input
+          label="My Message to Send"
+          value={myData}
+          onchange={handleInputChange}
+        ></lightning-input>
+        
+        <lightning-button
+          label="Send Message"
+          onclick={handleClick}
+        ></lightning-button>
+      </div>
+    </lightning-card>
+  </template>
