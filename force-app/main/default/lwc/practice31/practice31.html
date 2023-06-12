@@ -1,0 +1,40 @@
+<template>
+    
+    <lightning-card title="Lightning Navigation" icon-name="custom:custom64">
+        <div class="slds-var-m-around_medium">
+
+            <!-- create a button to navigate to home page -->
+            <lightning-button 
+                label="Navigate to Home"
+                onclick={handleNavigateToHome}>
+            </lightning-button>
+
+             <!-- create a button to navigate to custom tab -->
+             <lightning-button 
+                label="Navigate to Custom Tab"
+                onclick={handleNavigateToCustomTab}>
+            </lightning-button>
+
+            <!-- create a button to navigate to Case home page -->
+            <lightning-button 
+                label="Navigate to Case Home"
+                onclick={handleNavigateToCaseHome}>
+            </lightning-button>
+
+            <!-- create a button to navigate to new Account Record Create Page -->
+            <lightning-button 
+                label="Navigate to Create Account Record Page"
+                onclick={handleNavigateToAccountCreation}>
+            </lightning-button>
+
+            <!-- create a button to navigate to Contact Record Page given record Id-->
+            <lightning-button 
+                label="Navigate to Record Page"
+                onclick={handleNavigateToRecordPage}>
+            </lightning-button>
+
+
+        </div>
+    </lightning-card>
+
+</template>

@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Show Error using Error Panel Component" icon-name="standard:account">
+        
+        <div class="slds-var-m-around_medium"> 
+
+            <lightning-input 
+                type="search" 
+                label="Account name to search" 
+                value={searchInput}
+                onchange={handleSearchChange}
+            ></lightning-input>
+
+            <template lwc:if={theAccount.data}>
+                <p>{theAccount.data.Name} --- {theAccount.data.AnnualRevenue}</p>
+            </template>
+            <!-- Conditionally display error : NO Account Found !! -->
+            <template lwc:elseif={theAccount.error}>
+                <!-- <p>NO Account with this name Found!!</p> -->
+                <c-error-panel 
+                    errors={theAccount.error}
+                    friendly-message="NO Account with this name Found!!"
+                ></c-error-panel>
+            </template>
+
+        </div>
+
+    </lightning-card>
+</template>
