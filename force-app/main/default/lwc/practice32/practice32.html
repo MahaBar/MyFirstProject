@@ -1,0 +1,30 @@
+<template>
+    
+    <lightning-card title="Reactivity For Object and Array" icon-name="action:user_activation">
+        <div class="slds-var-m-around_medium">
+
+            <p>First Name value is {person.firstName}</p>
+            <p>Last Name value is {person.lastName}</p>
+            
+            <lightning-button 
+                variant="brand" 
+                label="Click To Change"
+                onclick={handleClick}
+
+            ></lightning-button>
+
+            
+
+            <p class="slds-var-m-top_large"> {sports} </p>
+            <lightning-button 
+                variant="brand" 
+                label="Change First Item"
+                onclick={changeFirstItem}>
+            </lightning-button>
+
+
+
+        </div>
+    </lightning-card>
+
+</template>
