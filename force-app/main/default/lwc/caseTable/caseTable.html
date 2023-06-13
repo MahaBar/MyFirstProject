@@ -1,0 +1,29 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    
+    <lightning-card title={cardTitle} icon-name="standard:case">
+        <div class="slds-var-m-around_medium">
+
+            <template lwc:if={myCases.data}>
+
+                <!-- sldsValidatorIgnoreNextLine -->
+                <lightning-datatable
+                    key-field="id"
+                    data={myCases.data}
+                    columns={columns}
+                    onrowaction={handleRowAction}
+                ></lightning-datatable>                
+
+            </template>
+
+            <template lwc:elseif={myCases.error}>
+                <c-error-panel
+                    errors={myCases.error}
+                    friendly-message="Error Getting Cases with Status"
+                ></c-error-panel>
+            </template>
+
+        </div>
+    </lightning-card>
+
+</template>

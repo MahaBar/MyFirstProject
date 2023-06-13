@@ -1,0 +1,15 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>57.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Practice34</masterLabel>
+    <targets>
+        <target>lightning__AppPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+            <property name="message" type="String" label="Message" />
+            <property name="price" type="Integer" default="100" min="50" max="200" label="Price" />
+            <property name="options" type="String" datasource="Red, Blue, Green" label="Options" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

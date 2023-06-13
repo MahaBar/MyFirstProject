@@ -1,0 +1,23 @@
+<template>
+    
+    <lightning-card title="XML Config Property" icon-name="custom:custom107">
+        <div class="slds-var-m-around_medium">
+
+            <p class="slds-text-heading_medium">
+                The message is {message}
+            </p>
+
+            <p>
+                <lightning-formatted-number value={price} format-style="currency" currency-code="USD">
+                </lightning-formatted-number>
+            </p>
+
+            <!-- show the option selected and change the backround color of text accordingly  -->
+             <p class="slds-text-heading_medium" style={style}>  <!--ignore waring-->
+                The Option Selected is {options}
+            </p>
+
+        </div>
+    </lightning-card>
+
+</template>

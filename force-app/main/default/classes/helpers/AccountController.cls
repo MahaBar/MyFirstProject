@@ -125,7 +125,13 @@ public with sharing class AccountController {
       // acc.Opportunities ==>> all the childs returned here 
      return acc.Opportunities ; 
    }
+
+
    
+   @AuraEnabled(cacheable=true)
+    public static List<Account> getBigTechAccounts() {
+        return [SELECT Id, Name, BillingStreet, BillingCity, BillingState, BillingCountry, BillingPostalCode, Description FROM Account WHERE Name LIKE 'BigTech%'];
+    }
 
 
 

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Big Tech Accounts" icon-name="standard:account">
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={mapMarkers}>
+                <lightning-map
+                    map-markers={mapMarkers}
+                    markers-title="Big Tech Companies"
+                    list-view="auto">
+                </lightning-map>
+            </template>
+            <template lwc:elseif={error}>
+                <c-error-panel 
+                    errors={error}
+                    friendly-message="No Accounts to Display"
+                ></c-error-panel>
+            </template>
+        </div>
+    </lightning-card>
+</template>
+ 
